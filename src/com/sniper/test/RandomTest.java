@@ -1,5 +1,6 @@
 package com.sniper.test;
 
+import android.app.Activity;
 import android.app.Instrumentation;
 import android.content.pm.PackageManager;
 import android.test.ActivityInstrumentationTestCase2;
@@ -30,7 +31,7 @@ public class RandomTest extends ActivityInstrumentationTestCase2<ActivityLogin> 
 	public void testBasic(){
 		System.out.println("Log In A: " + loginButton);
 		loginButton.performClick();
-		
+			
 		System.out.println("Log In " + loginButton);
 		
 		//assertEquals("a", "a");

@@ -10,18 +10,17 @@ import android.widget.Button;
 
 import com.sniper.*;
 
-public class MainTestClass extends ActivityInstrumentationTestCase2<ActivityMain> {
+public class GamesScreenTest extends ActivityInstrumentationTestCase2<ActivityGamesHome> {
 	
 //	private static final int NUM_EVENTS = 1000;
-	private static final String packageToTest = "com.sniper.ActivityMain";
+	private static final String packageToTest = "com.sniper.GamesScreenTest";
 	
 	private Button armButton, shootButton, targetsButton;
     private View mainLayout;
-    ActivityMain mainActivity;
-    
+
 	
-	public MainTestClass(){
-		super(packageToTest, ActivityMain.class);
+	public GamesScreenTest(){
+		super(packageToTest, ActivityGamesHome.class);
 	}
 
 	/**
@@ -29,20 +28,7 @@ public class MainTestClass extends ActivityInstrumentationTestCase2<ActivityMain
 	 */
 	@UiThreadTest
 	public void testBasic(){
-		this.assertNotNull("No Progress Dialog", mainActivity.progressDialog);
-		armButton.performClick();
-		
-		
 		targetsButton.performClick();
-		this.assertTrue("null weapons select", mainActivity.alert != null);
-		this.assertTrue("No weapons select", mainActivity.alert.isShowing());
-		
-		mainActivity.alert.dismiss();
-		
-		//Button b = (Button)mainActivity.findViewById(com.sniper.R.id.home_button);
-		//b.performClick();
-		
-		//
 		
 		//assertEquals("a", "a");
 	}
@@ -58,9 +44,8 @@ public class MainTestClass extends ActivityInstrumentationTestCase2<ActivityMain
 		// TODO Auto-generated method stub
 		super.setUp();
 		
-        mainActivity = getActivity();
-        targetsButton = (Button)mainActivity.findViewById(com.sniper.R.id.name_button);
-        armButton = (Button) mainActivity.findViewById(com.sniper.R.id.weapon_button);
+        ActivityGamesHome mainActivity = getActivity();
+        targetsButton = (Button)mainActivity.findViewById(com.sniper.R.id.game_button);
         
         System.out.println("Log In B: " + armButton);
         mainLayout = (View) mainActivity.findViewById(com.sniper.R.id.layout_root);
